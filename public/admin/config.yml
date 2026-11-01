@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: chesstring/website
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "../../assets/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Cover/Thumbnail Image", name: "coverImage", widget: "image", required: false }
+      - { label: "GitHub Repo URL", name: "repoUrl", widget: "string", required: false }
+      - { label: "Live Demo URL", name: "demoUrl", widget: "string", required: false }
+      - { label: "Tech Tags", name: "tags", widget: "list", required: false }
+      - { label: "Project Documentation & Details", name: "body", widget: "markdown" }
+
+  - name: "docs"
+    label: "Documentation"
+    folder: "src/content/docs"
+    create: true
+    fields:
+      - { label: "Doc Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Page Order", name: "order", widget: "number", default: 1 }
+      - { label: "Documentation Content", name: "body", widget: "markdown" }
